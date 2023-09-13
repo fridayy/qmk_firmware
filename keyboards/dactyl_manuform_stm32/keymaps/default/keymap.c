@@ -33,7 +33,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #ifdef OLED_ENABLE
 bool oled_task_user(void) {
     // Host Keyboard Layer Status
-    oled_write_ln_P(PSTR("penisblume"));
+    oled_write_P(PSTR("WPM: "), false);
+    oled_write_P(get_u8_str(get_current_wpm(), '0'), false);
+    oled_write_P(PSTR("\n"), false);
     oled_write_P(PSTR("Layer: "), false);
 
     switch (get_highest_layer(layer_state)) {
