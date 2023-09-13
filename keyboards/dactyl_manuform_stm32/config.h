@@ -19,10 +19,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #pragma once
 
 #define HAL_USE_SERIAL TRUE
-//#define SPLIT_HAND_PIN B9
-//#define SERIAL_USART_DRIVER SD1
-//#define SERIAL_USART_TX_PAL_MODE 7
-//#define SERIAL_USART_SPEED 921600
+
+// oled i2c config
+#define I2C_DRIVER        I2CD1
+#define I2C1_SCL_PIN      B8
+#define I2C1_SDA_PIN      B9
+#define I2C1_SCL_PAL_MODE 4
+#define I2C1_SDA_PAL_MODE 4
+#define I2C1_CLOCK_SPEED  400000
+#define I2C1_DUTY_CYCLE FAST_DUTY_CYCLE_16_9
+#define OLED_DISPLAY_128X32
 
 // full duplex uart
 #define SERIAL_USART_FULL_DUPLEX   // Enable full duplex operation mode.
